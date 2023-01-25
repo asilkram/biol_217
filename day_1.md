@@ -51,3 +51,11 @@ __auch fett__
 
 deine mudda
 sowieso
+
+
+---
+
+**login to HPC**\
+ssh -X sunam233@caucluster.rz.uni-kiel.de\
+password: biol217_2022
+
