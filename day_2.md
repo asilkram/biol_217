@@ -117,6 +117,7 @@ done
 
 ----
 
-**html zum Kursskript:**
 
-https://github.com/AammarTufail/Bioinformatics_Master_Module2023/blob/main/Day-2/Tutorial_Day2.md
+
+Das Kurs-Skript zu diesen Schritten ist [hier](https://github.com/AammarTufail/Bioinformatics_Master_Module2023/blob/main/Day-2/Tutorial_Day2.md) verlinkt
+
