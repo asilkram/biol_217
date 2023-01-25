@@ -115,5 +115,8 @@ done
 ```
 
 
+----
 
-/work_beegfs/sunam233/batch_scripts
+**html zum Kursskript:**
+
+https://github.com/AammarTufail/Bioinformatics_Master_Module2023/blob/main/Day-2/Tutorial_Day2.md
