@@ -2,6 +2,9 @@
 this is just a test on first day
 
 
+![image](sexy_pics/EssXXfJXIAEvjIr.jpg)
+
+
 # Day_1 Introduction to linux
 
 ## Introduction to linux
