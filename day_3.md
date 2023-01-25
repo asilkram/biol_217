@@ -48,8 +48,10 @@ megahit_toolkit contig2fastg 99 final.contigs.fa > final.contigs.fastg
 ```
 
 
-das wunderschöne [Bild](sexy_pics/graph_also.png), was Bandage kreiert hat, zeigt die contigs\
+das wunderschöne [Bild](sexy_pics/graph_also.png), was Bandage kreiert hat, zeigt die assembled contigs\
+längste contigs absteigend bis kürzeste\
 *Schleifen in Abbildung zeigen die bubbles der De-Bruijn-Graphen*
+
 
 anschließend folgendes batch script laufen lassen
 ```
@@ -249,3 +251,13 @@ for i in *.sam; do samtools view -bS $i > "$i".bam; done
 #nachricht, die erscheint, wenn der job durch ist
 echo "fertisch"
 ```
+
+---
+
+`fileformat-Verlauf`
+
+sequenzieren bringt: fastq.gz (enthält Sequenz, quality values, sequence name/id/..)
+cleanup verändert das format nicht: bleibt fastq.gz
+assembly zu contigs kreiert: fa (plain fasta with contig sequences)
+mapping führt zu: sam (binäres format)
+danach umwandlung zu: bam 
