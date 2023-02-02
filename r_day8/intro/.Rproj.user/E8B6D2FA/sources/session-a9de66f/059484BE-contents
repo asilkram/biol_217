@@ -1,0 +1,83 @@
+
+#import the excel sheet with the data
+library(readxl)
+csrA_WT_sorted <- read_excel("~/Documents/r_day8/csrA-WT_sorted.xlsx", 
+                             sheet = "Sheet3")
+View(csrA_WT_sorted)
+
+#make heatmap
+library(ggplot2)
+ggplot(csrA_WT_sorted, aes(x = seq_type, y = Name, fill = log2fold_change)) + geom_tile()
+
+
+#change color of heatmap
+#as a gradient between two colors
+ggplot(csrA_WT_sorted, aes(x = seq_type, y = Name, fill = log2fold_change)) + geom_tile() +
+  scale_fill_gradient(low="orange", high="blue")
+
+#with hex codes
+#google hex codes
+#https://html-color-codes.info/webfarben_hexcodes/
+ggplot(csrA_WT_sorted, aes(x = seq_type, y = Name, fill = log2fold_change)) + geom_tile() +
+  scale_fill_gradient(low="#E88002", high="#5700F7")
+
+#with a kinda red palette
+ggplot(csrA_WT_sorted, aes(x = seq_type, y = Name, fill = log2fold_change)) + geom_tile() +
+      scale_fill_distiller(palette = "RdPu")
+
+#with a kinda green scheme
+install.packages("viridis")
+library(viridis)
+ggplot(csrA_WT_sorted, aes(x = seq_type, y = Name, fill = log2fold_change)) + geom_tile() +
+scale_fill_viridis(discrete=FALSE)
+
+#mit Achsenbeschriftung und title
+ggplot(csrA_WT_sorted, aes(x = seq_type, y = Name, fill = log2fold_change)) + geom_tile() +
+  scale_fill_gradient(low="#E88002", high="#5700F7") +
+ggtitle("beautiful heatmap") + # for the main title
+xlab("sequencing type") + # for the x axis label
+ylab("gene name") # for the y axis label
+
+
+library(viridis)
+ggplot(csrA_WT_sorted, aes(x = seq_type, y = Name, fill = log2fold_change)) + geom_tile() +
+  scale_fill_viridis(discrete=FALSE)+
+  ggtitle("beautiful heatmap") + # for the main title
+  xlab("sequencing type") + # for the x axis label
+  ylab("gene name") # for the y axis label
+
+
+
+
+
+####### WDH ################
+
+#import excel sheet
+library(readxl)
+exercise <- read_excel("~/Documents/r_day8/csrA-WT_sorted.xlsx", 
+                             sheet = "Sheet5")
+View(exercise)
+
+#create heatmap
+ggplot(exercise, aes(x = seq_type, y = Identifier, fill = change)) + geom_tile() +
+  scale_fill_gradient(low="#E88002", high="#5700F7") +
+  ggtitle("exercise") + # for the main title
+  xlab("sequencing type") + # for the x axis label
+  ylab("gene name") # for the y axis label
+
+
+#oooooooooooor
+#dont import in long format
+library(readxl)
+exercise_2 <- read_excel("~/Documents/r_day8/csrA-WT_sorted.xlsx", 
+                       sheet = "Sheet6")
+
+library(tidyr)
+exercise_2_long <- gather(exercise_2, key = "Identifier", value = "log2_fold")
+
+
+ggplot(exercise_2, aes(x = log2_fold, y = Identifier, fill = log2_fold)) + geom_tile() +
+  scale_fill_gradient(low="#E88002", high="#5700F7") +
+  ggtitle("exercise_2") + # for the main title
+  xlab("sequencing type") + # for the x axis label
+  ylab("identifier") # for the y axis label
