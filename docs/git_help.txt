@@ -1,0 +1,31 @@
+git = version control system
+github = version control hosting system = website
+
+repository = "container" für verschiedene versionen von etwas
+
+git init = initiierung von git
+git status = wenn document rot -> git add file -> file grün
+
+# Statusabfrage?
+git status
+#file von grün auf rot kriegen
+git add filename
+git commit -m "comment"
+
+
+workflow:
+make changes in document in VSC
+save that
+in VSC: Reiter terminal -> new terminal
+#be in the right directory!!!
+    git status
+    #should be red
+    git add documentname
+    git commit -m "message whatever"
+    git status
+    #should be green
+    git push
+    # uploads changes to github repo
+
+nett2know
+github copilot -> macht Vorschläge was als nächstes kommt anhand des aktuellen codes, nice damit man nicht alles erinnern muss
